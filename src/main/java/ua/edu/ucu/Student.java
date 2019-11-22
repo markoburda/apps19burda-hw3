@@ -36,4 +36,17 @@ class Student {
         return "Student{name=" + name + ", surname=" + surname + ", " + "GPA=" + GPA + ", year=" + year + '}';
     }
 
+    @Override
+    public int hashCode(){
+        return this.getName().hashCode() + this.getSurname().hashCode();
+    }
+
+    @Override
+    public boolean equals(Object e){
+        if(e instanceof  Student){
+            return this.hashCode() == e.hashCode();
+        }
+        return false;
+    }
+
 }
